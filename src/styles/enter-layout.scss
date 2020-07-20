@@ -1,0 +1,108 @@
+.enter__layout {
+  height: 100%;
+}
+
+.enter__layout .enter__aside {
+  background-color: #ffffff;
+  border-right: 1px solid #e8e8e8;
+  .menu {
+    width: calc(100% - 1px);
+    border-right: none;
+  }
+}
+
+.enter__layout .enter__aside .enter__aside-title {
+  height: 64px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  .title__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .title__link-image {
+    width: 32px;
+    margin-right: 4px;
+    &.collapsed {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
+  }
+  .title__link-text {
+    display: block;
+    transition: transform 0.3s;
+    overflow: hidden;
+    &.collapsed {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+}
+
+.enter__layout .enter__header {
+  background: #fff;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.enter__layout .enter__header .enter__header-user {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.enter__layout .enter__header .enter__header-user .write {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 16px;
+  border-left: 1px solid #e8e8e8;
+  user-select: none;
+  &:hover {
+    color: #1890ff;
+  }
+}
+
+.enter__layout .enter__header .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  &:hover {
+    color: #1890ff;
+  }
+}
+
+.enter__layout .enter__content {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  overflow: hidden;
+  overflow-x: auto;
+  flex: 1;
+  .main {
+    min-width: 1000px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    overflow: hidden;
+  }
+}
