@@ -1,6 +1,6 @@
 <template>
   <div class="oss_page">
-    <div class="oss_controls">
+    <div class="oss_controls invert">
       <span class="item">操作:</span>
       <Button class="item" ghost type="primary" @click="selectedListFn">全选</Button>
       <Button class="item" ghost type="primary" :disabled="!checkedList.length"  @click="unselectedListFn">反选</Button>
@@ -23,7 +23,7 @@
               <Checkbox v-model="checkedItems[item.key]"></Checkbox>
             </div>
             <div style="width: 100%; text-align: center; overflow: hidden;">
-              <img style="filter: invert(1);" :src="domain + '/' + item.key" height="120px"/>
+              <img :src="domain + '/' + item.key" height="120px"/>
             </div>
           </Card>
         </ListItem>

@@ -17,33 +17,20 @@ export default new VueRouter({
     {
       path: '/',
       component: resolve('enter-layout'),
-      redirect: '/note-list-editor',
+      redirect: '',
       children: [
         {
-          name: 'note-list-editor',
+          name: 'note',
           component: resolve('note'),
-          path: 'note-list-editor',
+          path: '',
         },
         {
-          path: 'tag-manager',
-          component: resolve('tag-manager'),
-          name: 'tag-manager',
-          meta: {
-            breadcrumb: []
-          },
-        },
-        {
-          path: 'tag-manager/create-or-update-tag/:id?',
+          path: 'create-or-update-tag',
           component: resolve('create-or-update-tag'),
-          name: 'create-or-update-tag',
+          name: 'tag',
           meta: {
             breadcrumb: []
           },
-        },
-        {
-          name: 'oss-manager',
-          component: resolve('oss-page'),
-          path: 'oss-manager',
         },
       ]
     },

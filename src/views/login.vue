@@ -1,5 +1,5 @@
 <template>
-  <div class="login__page">
+  <div class="login__page invert">
     <Card class="login__page-card" title="后台管理系统">
       <Form :form="form">
         <FormItem>
@@ -57,7 +57,7 @@ export default {
       this.form.validateFields(async (err, values) => {
         if (!err) {
           this.pending = true
-          const res = await request.post('/api/userLogin', { ...values })
+          const res = await request.post('/api/user/userLogin', { ...values })
           this.pending = false
           if (res.success) {
             localStorage.setItem('x_blog_token', res.data.token)

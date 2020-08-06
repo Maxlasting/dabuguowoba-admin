@@ -5,7 +5,7 @@
         <Avatar :size="24" icon="user" :src="avatar"></Avatar>
         <div class="name">{{ username || 'admin' }}</div>
       </div>
-      <Menu slot="overlay">
+      <Menu slot="overlay" class="invert">
         <MenuItem key="0" style="min-width: 180px; padding: 8px 0 8px 24px; display: flex; align-items: center;">
           <Icon type="setting"></Icon>
           <router-link to="/user">个人设置</router-link>

@@ -51,12 +51,12 @@ export default {
       loading: false,
     }
   },
-  mounted () {
-    this.initEditor()
-  },
-  async asyncData () {
+  async created () {
     aceMarkdownEditor = await import('ace-vue-editor')
     aceMarkdownEditor = aceMarkdownEditor.default
+  },
+  mounted () {
+    this.initEditor()
   },
   methods: {
     initEditor () {
