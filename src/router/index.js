@@ -25,9 +25,17 @@ export default new VueRouter({
           path: '',
         },
         {
-          path: 'create-or-update-tag',
-          component: resolve('create-or-update-tag'),
+          path: 'tag',
+          component: resolve('tag'),
           name: 'tag',
+          meta: {
+            breadcrumb: []
+          },
+        },
+        {
+          path: 'tag-create',
+          component: resolve('tag-create'),
+          name: 'tagCreate',
           meta: {
             breadcrumb: []
           },

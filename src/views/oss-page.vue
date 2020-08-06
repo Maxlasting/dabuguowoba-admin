@@ -32,7 +32,7 @@
   </div>
 </template>
 
-<style lang="scss" src="@styles/oss-page.scss"></style>
+<style lang="scss" src="@styles/oss.scss"></style>
 
 <script>
 import Vue from 'vue'

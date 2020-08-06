@@ -1,5 +1,5 @@
 <template>
-  <div class="create_or_update_tag__page invert">
+  <div class="tag__page invert">
     <div class="funs">
       <Button class="mr8" @click="createTagItemFn">新建</Button>
       <Button class="mr8">删除</Button>
@@ -28,6 +28,7 @@
 
 <script>
 import { Table, Button, Input, Checkbox } from 'ant-design-vue'
+import request from '@request'
 
 const InputSearch = Input.Search
 
@@ -98,20 +99,35 @@ export default {
       selectedRowKeys: [],
     }
   },
+  created () {
+    this.requestTagsListFn()
+  },
   methods: {
+    async requestTagsListFn () {
+      const res = await request.get('/api/tag/getListOrItem')
+      console.log(res)
+    },
     onSelectChange (selectedRowKeys) {
       console.log(this.selectedRowKeys, selectedRowKeys)
       this.selectedRowKeys = selectedRowKeys
     },
-    createTagItemFn () {
-      this.$router.push('/tag-manager/create-or-update-tag')
+    createTagItemFn (id) {
+      this.$router.push('/tag-create')
+    },
+    clickToCancelFn () {
+
+    },
+    clickToSubmitFn () {
+
     },
   },
 }
 </script>
 
 <style lang="scss">
-.create_or_update_tag__page {
+.tag__page {
+  box-sizing: border-box;
+  padding: 12px 16px;
   min-height: 100%;
 
   .mr8 {
@@ -127,9 +143,19 @@ export default {
   }
 }
 
-.create_or_update_tag__page .funs {
+.tag__page .funs {
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+}
+
+.tag__page .drawer {
+  .ant-drawer-mask {
+    background-color: rgba(255, 255, 255, 0.45);
+  }
+  .ant-drawer-content-wrapper {
+    background-color: #707070;
+    box-shadow: none;
+  }
 }
 </style>
