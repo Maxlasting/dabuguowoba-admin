@@ -59,6 +59,18 @@
   align-items: center;
   box-sizing: border-box;
   border-bottom: 1px solid #e8e8e8;
+  position: relative;
+
+  .enter__header-title {
+    height: 100%;
+    position: absolute;
+    left: 68px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #cecece;
+  }
 }
 
 .enter__layout .enter__header .enter__header-user {
@@ -82,8 +94,11 @@
 }
 
 .enter__layout .enter__header .trigger {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
-  line-height: 64px;
   padding: 0 24px;
   cursor: pointer;
   transition: color 0.3s;

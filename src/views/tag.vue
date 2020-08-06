@@ -112,7 +112,7 @@ export default {
       this.selectedRowKeys = selectedRowKeys
     },
     createTagItemFn (id) {
-      this.$router.push('/tag-create')
+      this.$router.push('/create-or-update-tag')
     },
     clickToCancelFn () {
 

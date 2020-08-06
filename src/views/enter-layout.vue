@@ -30,6 +30,7 @@
             class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'"
             @click="() => (collapsed = !collapsed)"
           />
+          <div class="enter__header-title">{{ curtRouteName }}</div>
           <div class="enter__header-user">
             <user/>
             <div class="write" @click="clickToWriteFn">写笔记</div>
@@ -96,7 +97,11 @@ export default {
   computed: {
     defaultOpenedSubMenus () {
       return this.routes.filter(_ => _.children && _.children.length).map(_ => _.name)
-    }
+    },
+    curtRouteName () {
+      const target = this.routes.filter(item => item.to === this.$route.name)
+      return target.length ? target[0].name : ''
+    },
   },
   mounted () {
     // console.log(this.$route)

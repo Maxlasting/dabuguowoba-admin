@@ -33,11 +33,11 @@ export default new VueRouter({
           },
         },
         {
-          path: 'tag-create',
-          component: resolve('tag-create'),
-          name: 'tagCreate',
+          path: 'create-or-update-tag',
+          component: resolve('tag-create-or-update'),
+          name: 'tagCreateOrUpdate',
           meta: {
-            breadcrumb: []
+            breadcrumb: [],
           },
         },
       ]
